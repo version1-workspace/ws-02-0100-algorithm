@@ -24,7 +24,9 @@ async function main() {
 
   for (const problem of problems) {
     try {
-      const isPassed = await runProblem(problem);
+      const isPassed = await runProblem(problem, {
+        shouldUseSolution: options.shouldUseSolution,
+      });
       hasFailure = hasFailure || !isPassed;
     } catch (error) {
       hasFailure = true;

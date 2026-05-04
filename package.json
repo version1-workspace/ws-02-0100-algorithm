@@ -6,7 +6,8 @@
   "scripts": {
     "cli": "tsx cli/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run cli --"
+    "start": "npm run cli --",
+    "start:solution": "npm run cli -- --solution "
   },
   "author": "",
   "license": "ISC",

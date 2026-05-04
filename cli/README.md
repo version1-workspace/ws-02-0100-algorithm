@@ -1,6 +1,6 @@
 # CLI
 
-`problems/` 配下の設問を検出し、各 `answer.ts` を `testcase.ts` の内容で実行するための CLI です。
+`problems/` 配下の設問を検出し、各 `answer.ts` または `solution.ts` を `testcase.ts` の内容で実行するための CLI です。
 
 ## 使い方
 
@@ -24,6 +24,13 @@ npm run cli -- problems/01-array-string/001-two-sum
 npm start -- problems/01-array-string
 ```
 
+模範解答を実行する場合は `--solution` を指定します。
+
+```sh
+npm run cli -- --solution problems/01-array-string
+npm start -- --solution problems/01-array-string/001-two-sum
+```
+
 ヘルプを表示する場合:
 
 ```sh
@@ -43,6 +50,7 @@ npm run cli -- --help
 ## 実行内容
 
 - `answer.ts` の default export を解答関数として読み込みます
+- `--solution` 指定時は `answer.ts` の代わりに `solution.ts` の default export を読み込みます
 - `testcase.ts` の `testCases` export をテストケースとして読み込みます
 - 既存の `Test` クラスで実行結果を表示します
 

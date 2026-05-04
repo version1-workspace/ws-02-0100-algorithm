@@ -8,8 +8,15 @@ import type { Problem } from "./problem";
 
 type AnswerFunction = (...args: unknown[]) => unknown;
 
-export async function runProblem(problem: Problem): Promise<boolean> {
-  const { answer, testCases } = await importProblem(problem);
+export interface RunProblemOptions {
+  shouldUseSolution: boolean;
+}
+
+export async function runProblem(
+  problem: Problem,
+  options: RunProblemOptions,
+): Promise<boolean> {
+  const { answer, testCases } = await importProblem(problem, options);
   const test = new Test<unknown, unknown>(problem.name, testCases, (input) =>
     callAnswer(answer, input),
   );
@@ -20,19 +27,23 @@ export async function runProblem(problem: Problem): Promise<boolean> {
   return test.results.every(({ isPassed }) => isPassed);
 }
 
-async function importProblem(problem: Problem): Promise<{
+async function importProblem(
+  problem: Problem,
+  options: RunProblemOptions,
+): Promise<{
   answer: AnswerFunction;
   testCases: TestCase<unknown, unknown>[];
 }> {
+  const answerFileName = options.shouldUseSolution ? "solution.ts" : "answer.ts";
   const answerModule = await importFile(
-    path.join(problem.absoluteDir, "answer.ts"),
+    path.join(problem.absoluteDir, answerFileName),
   );
   const testcaseModule = await importFile(
     path.join(problem.absoluteDir, "testcase.ts"),
   );
 
   if (typeof answerModule.default !== "function") {
-    throw new Error("answer.ts must export a default function");
+    throw new Error(`${answerFileName} must export a default function`);
   }
 
   if (!Array.isArray(testcaseModule.testCases)) {
