@@ -9,10 +9,10 @@ problems/
 └── NN-category-name/
     └── MMM-problem-name/
         ├── answer.ts
+        ├── lib.ts
+        ├── solution.ts
         ├── question.md
-        └── test/
-            ├── answer.ts
-            └── case.ts
+        └── testcase.ts
 ```
 
 - カテゴリディレクトリは `NN-category-name` 形式にする
@@ -21,6 +21,6 @@ problems/
 - `MMM` はカテゴリ内で連番の3桁の問題番号にする
 - ディレクトリ名は小文字の kebab-case にする
 - `answer.ts` には解答関数のスケルトンまたは実装を置く
-- `question.md` には問題名または問題文を置く
-- `test/answer.ts` には模範回答を置く
-- `test/case.ts` には `TestCase` 型のテストケースを置く
+- `lib.ts` には問題解決のための補助関数やクラスを置く
+- `solution.ts` には模範解答を置く
+- `question.md` には問題文を置く

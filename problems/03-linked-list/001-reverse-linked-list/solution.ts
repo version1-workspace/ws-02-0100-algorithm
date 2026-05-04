@@ -1,4 +1,4 @@
-import { ListNode } from "../answer";
+import { ListNode } from "./answer";
 
 export default function reverseList(head: ListNode | null): ListNode | null {
   let previous: ListNode | null = null;

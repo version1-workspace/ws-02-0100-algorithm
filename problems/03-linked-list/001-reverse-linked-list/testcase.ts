@@ -1,5 +1,5 @@
 import { TestCase } from "@/runner/types";
-import { ListNode } from "../answer";
+import { ListNode } from "./answer";
 
 function createList(values: number[]): ListNode | null {
   let head: ListNode | null = null;
