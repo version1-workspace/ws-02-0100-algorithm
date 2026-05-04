@@ -1,6 +1,6 @@
 ---
-name: Problem Creator
-description: アルゴリズムとデータ構造の問題を作成するためのスキルです。またそれを確認するためのテストケースも用意します。
+name: problem-creator
+description: アルゴリズムとデータ構造の問題を作成するためのスキルです。またそれを確認するためのテストケース・模範回答も用意します。
 ---
 
 # Problem Creator
