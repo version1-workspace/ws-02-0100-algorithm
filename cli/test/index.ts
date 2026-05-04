@@ -1,4 +1,4 @@
-import { TestCase } from "../types";
+import { TestCase } from "@/cli/test/types";
 
 const color = {
   blue: (value: string) => `\x1b[34m${value}\x1b[0m`,

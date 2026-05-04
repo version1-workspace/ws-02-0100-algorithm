@@ -1,4 +1,4 @@
-import { TestCase } from "@/runner/types";
+import { TestCase } from "@/cli/test/types";
 
 export const testCases = [
   {

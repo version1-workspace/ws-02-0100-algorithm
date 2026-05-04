@@ -6,7 +6,7 @@ import reverseList, {
   ListNode,
 } from "@/problems/03-linked-list/001-reverse-linked-list/answer";
 import { testCases as reverseLinkedListTestCases } from "@/problems/03-linked-list/001-reverse-linked-list/testcase";
-import { Test } from "./test";
+import { Test } from "@/cli/test";
 
 function main() {
   const twoSumTest = new Test<[number[], number], number[]>(

@@ -15,11 +15,12 @@
 │   ├── 07-dp/
 │   ├── 08-binary-search/
 │   └── 09-heap/
-├── runner/
+├── cli/
 │   ├── index.ts
-│   ├── types.ts
-│   └── test/
-│       └── index.ts
+│   ├── test/
+│   │   ├── index.ts
+│   │   └── types.ts
+│   └── README.md
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
@@ -31,10 +32,10 @@
 - `problems/`: アルゴリズム問題をカテゴリ別に配置する
 - `problems/{category}/{problem}/answer.ts`: 解答実装を置く
 - `problems/{category}/{problem}/question.md`: 問題文を置く
-- `problems/{category}/{problem}/test/`: テストケースや検証用コードを置く
-- `runner/`: 解答とテストケースを読み込んで実行する仕組みを置く
-- `runner/test/index.ts`: テスト結果の保持と出力を担当する `Test` クラスを置く
-- `runner/types.ts`: テストケースなど runner 共通の型を置く
+- `problems/{category}/{problem}/testcase.ts`: テストケースを置く
+- `cli/`: 問題ディレクトリを検出して解答を実行する CLI を置く
+- `cli/test/index.ts`: テスト結果の保持と出力を担当する `Test` クラスを置く
+- `cli/test/types.ts`: テストケースなど CLI 共通の型を置く
 
 ## ドキュメント
 
@@ -45,5 +46,13 @@
 ```bash
 npm start
 ```
+
+対象ディレクトリを指定する場合:
+
+```bash
+npm start -- problems/01-array-string
+```
+
+詳細は [CLI の使い方](cli/README.md) を参照してください。
 
 TypeScript の import は `@/` でリポジトリルートから指定できます。

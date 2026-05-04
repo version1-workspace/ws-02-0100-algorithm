@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cli": "tsx cli/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsx runner/index.ts"
+    "start": "npm run cli --"
   },
   "author": "",
   "license": "ISC",
