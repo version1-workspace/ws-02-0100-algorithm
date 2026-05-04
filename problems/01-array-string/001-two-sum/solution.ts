@@ -1,7 +1,6 @@
 export default function twoSum(nums: number[], target: number): number[] {
-  const map = new Map<number, number>(); // 値 -> インデックス
+  const map = new Map<number, number>();
 
-  console.log("Input:", nums, "Target:", target);
   for (let i = 0; i < nums.length; i++) {
     const complement = target - nums[i];
 
@@ -12,5 +11,5 @@ export default function twoSum(nums: number[], target: number): number[] {
     map.set(nums[i], i);
   }
 
-  return []; // 問題の前提上ここには来ない
+  return [];
 }

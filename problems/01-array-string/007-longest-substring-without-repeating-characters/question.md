@@ -1,1 +1,40 @@
-# Longest Substring Without Repeating Characters
+---
+title: Longest Substring Without Repeating Characters
+category: String / Sliding Window
+---
+
+# 問題文
+
+文字列 `s` が与えられます。
+同じ文字を含まない連続部分文字列のうち、最も長いものの長さを返してください。
+
+# 条件
+
+- 部分文字列は元の文字列内で連続していなければならない
+- 同じ文字が 2 回以上含まれてはいけない
+- 空文字列が与えられた場合は `0` を返す
+
+# 例
+
+### 例1
+
+入力: `s = "abcabcbb"`
+出力: `3`
+説明: `"abc"` の長さが最大で `3` です。
+
+### 例2
+
+入力: `s = "bbbbb"`
+出力: `1`
+説明: `"b"` が条件を満たす最長の部分文字列です。
+
+### 例3
+
+入力: `s = "pwwkew"`
+出力: `3`
+説明: `"wke"` の長さが最大で `3` です。
+
+# 入力制約
+
+- `0 <= s.length <= 5 * 10^4`
+- `s` は英字、数字、記号、空白を含みうる

@@ -1,3 +1,32 @@
 import { TestCase } from "@/cli/test/types";
 
-export const testCases = [] as TestCase<string[][], number>[];
+export const testCases = [
+  {
+    input: [
+      ["1", "1", "1", "1", "0"],
+      ["1", "1", "0", "1", "0"],
+      ["1", "1", "0", "0", "0"],
+      ["0", "0", "0", "0", "0"],
+    ],
+    expected: 1,
+  },
+  {
+    input: [
+      ["1", "1", "0", "0", "0"],
+      ["1", "1", "0", "0", "0"],
+      ["0", "0", "1", "0", "0"],
+      ["0", "0", "0", "1", "1"],
+    ],
+    expected: 3,
+  },
+  { input: [["0", "0"], ["0", "0"]], expected: 0 },
+  { input: [["1"]], expected: 1 },
+  {
+    input: [
+      ["1", "0", "1"],
+      ["0", "1", "0"],
+      ["1", "0", "1"],
+    ],
+    expected: 5,
+  },
+] as TestCase<string[][], number>[];
