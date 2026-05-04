@@ -6,43 +6,13 @@
 .
 ├── problems/
 │   ├── 00-entry/
-│   │   └── 001-prime-numbers/
-│   │       ├── answer.ts
-│   │       ├── question.md
-│   │       └── test/
-│   │           └── case.ts
 │   ├── 01-array-string/
-│   │   ├── 001-two-sum/
-│   │   │   ├── answer.ts
-│   │   │   ├── question.md
-│   │   │   └── test/
-│   │   │       ├── answer.ts
-│   │   │       └── case.ts
-│   │   ├── 002-best-time-to-buy-and-sell-stock/
-│   │   ├── 003-contains-duplicate/
-│   │   ├── 004-product-of-array-except-self/
-│   │   ├── 005-maximum-subarray/
-│   │   ├── 006-valid-anagram/
-│   │   ├── 007-longest-substring-without-repeating-characters/
-│   │   ├── 008-minimum-window-substring/
-│   │   ├── 009-3sum/
-│   │   └── 010-merge-intervals/
 │   ├── 02-data-transform/
 │   ├── 03-linked-list/
 │   ├── 04-stack-queue/
-│   │   └── 001-valid-parentheses/
-│   │       ├── answer.ts
-│   │       ├── question.md
-│   │       └── test/
-│   │           └── case.ts
 │   ├── 05-tree/
 │   ├── 06-graph/
 │   ├── 07-binary-search/
-│   │   └── 001-binary-search/
-│   │       ├── answer.ts
-│   │       ├── question.md
-│   │       └── test/
-│   │           └── case.ts
 │   └── 08-heap/
 ├── runner/
 │   ├── index.ts
@@ -64,6 +34,10 @@
 - `runner/`: 解答とテストケースを読み込んで実行する仕組みを置く
 - `runner/test/index.ts`: テスト結果の保持と出力を担当する `Test` クラスを置く
 - `runner/types.ts`: テストケースなど runner 共通の型を置く
+
+## ドキュメント
+
+- [設問ディレクトリの配置ルール](docs/problems/design.md)
 
 ## 実行
 
