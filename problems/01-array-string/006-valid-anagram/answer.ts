@@ -1,0 +1,3 @@
+export default function isAnagram(s: string, t: string): boolean {
+  return false;
+}
