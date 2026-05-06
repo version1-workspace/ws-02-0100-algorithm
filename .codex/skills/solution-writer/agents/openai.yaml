@@ -1,0 +1,4 @@
+interface:
+  display_name: "solution-writer"
+  short_description: "問題文と模範解答から solution.md を作成"
+  default_prompt: "Use $solution-writer to create solution.md from question.md and solution.ts."
