@@ -1,58 +1,49 @@
 # ws-02-0100-algorithm
 
-## ディレクトリ構造
+アルゴリズム問題を TypeScript で解き、CLI からテストケースを実行するためのリポジトリです。
 
-```text
-.
-├── problems/
-│   ├── 00-entry/
-│   ├── 01-array-string/
-│   ├── 02-data-transform/
-│   ├── 03-linked-list/
-│   ├── 04-stack-queue/
-│   ├── 05-tree/
-│   ├── 06-graph/
-│   ├── 07-dp/
-│   ├── 08-binary-search/
-│   └── 09-heap/
-├── cli/
-│   ├── index.ts
-│   ├── test/
-│   │   ├── index.ts
-│   │   └── types.ts
-│   └── README.md
-├── package.json
-├── package-lock.json
-├── tsconfig.json
-└── README.md
+## 使い方
+
+依存関係をインストールします。
+
+```bash
+npm install
 ```
 
-## 各ディレクトリの役割
-
-- `problems/`: アルゴリズム問題をカテゴリ別に配置する
-- `problems/{category}/{problem}/answer.ts`: 解答実装を置く
-- `problems/{category}/{problem}/question.md`: 問題文を置く
-- `problems/{category}/{problem}/testcase.ts`: テストケースを置く
-- `cli/`: 問題ディレクトリを検出して解答を実行する CLI を置く
-- `cli/test/index.ts`: テスト結果の保持と出力を担当する `Test` クラスを置く
-- `cli/test/types.ts`: テストケースなど CLI 共通の型を置く
-
-## ドキュメント
-
-- [設問ディレクトリの配置ルール](docs/problems/design.md)
-
-## 実行
+すべての問題を実行します。
 
 ```bash
 npm start
 ```
 
-対象ディレクトリを指定する場合:
+`npm run cli` からも同じ CLI を実行できます。
+
+```bash
+npm run cli
+```
+
+## 対象指定
+
+第一引数にディレクトリを指定すると、実行対象を絞れます。
 
 ```bash
 npm start -- problems/01-array-string
+npm start -- problems/01-array-string/001-two-sum
 ```
 
-詳細は [CLI の使い方](cli/README.md) を参照してください。
+指定したディレクトリ配下に複数の問題ディレクトリがある場合は、再帰的に検出して実行します。
 
-TypeScript の import は `@/` でリポジトリルートから指定できます。
+## 模範解答の実行
+
+`--solution` を指定すると、`answer.ts` の代わりに `solution.ts` を実行します。
+
+```bash
+npm start -- --solution problems/01-array-string
+npm run start:solution -- problems/01-array-string/001-two-sum
+```
+
+## 関連ドキュメント
+
+- [CLI の使い方](cli/README.md)
+- [プロジェクト設計](docs/design.md)
+- [設問ディレクトリの配置ルール](docs/problems/design.md)
